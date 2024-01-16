@@ -2,15 +2,9 @@ version: '3'
 
 services:
   php:
-    image: php:8.2-fpm
+    build: ./docker/php
     volumes:
       - './src:/var/www/html'
-
-  composer:
-    image: composer
-    volumes:
-        - .:/src
-    command: install
 
   nginx:
     image: nginx:latest
